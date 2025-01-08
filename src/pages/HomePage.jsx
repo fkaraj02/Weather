@@ -1,50 +1,79 @@
-import { NavLink } from "react-router-dom";
+import WeatherDetails from "../components/Weatherdetails";
+import React, { useState, useEffect } from "react";
+import Loading from "../components/Loading";
+import PermissionDenied from "./PermissionDenied";
+import { useNavigate } from "react-router-dom";
 
-export default function HomePage({ weather }) {
-  return (
-    <>
-      <div className="grid grid-cols-2 gap-4 mb-32 pl-4 pr-4">
-        <div className=" flex items-center justify-center mt-32 font-bold">
-          <div className="grid-rows-3	">
-            <h1 className="text-5xl block">{weather.name}</h1>
-            <p className="mt-3 text-black text-opacity-50">
-              Min: {(weather.main.temp_min - 273.15) | 0} / Max:
-              {(weather.main.temp_max - 273.15) | 0}
-            </p>
-            <h1 className="text-8xl mt-10">
-              {(weather.main.temp - 273.15) | 0} &#8451;
-            </h1>
-          </div>
-        </div>
-        <div className=" flex items-center justify-center mt-32 ">
-          <h1 className="text-black text-opacity-50 text-8xl font-semibold">
-            {weather.weather[0].main}
-          </h1>
-        </div>
-      </div>
+export default function HomePage() {
+  const api = {
+    key: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
+    base: import.meta.env.VITE_OPEN_WEATHER_API_URL,
+  };
 
-      <div className="grid grid-cols-2">
-        <div className=" flex items-center justify-center font-bold mb-32 ">
-          <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Details
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              Details go here
-            </p>
-          </div>
-        </div>
-        <div className=" flex items-center justify-center font-bold mb-32 ">
-          <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Wind
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              Details go here
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+  const [weather, setWeather] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
+  const [allowed, setAllowed] = useState(false);
+  let navigate = useNavigate();
+
+  const getLocation = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          fetchWeatherData({
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+          });
+          setLat(position.coords.latitude);
+          setLon(position.coords.longitude);
+          setAllowed(true);
+        },
+        function (error) {
+          if (error.code == error.PERMISSION_DENIED) {
+            setAllowed(false);
+            console.log(error);
+            setIsLoading(false);
+          }
+        }
+      );
+    } else {
+      setAllowed(false);
+      setIsLoading(false);
+      console.log("Geolocation is not available in your browser.");
+    }
+  };
+
+  const fetchWeatherData = async ({ lat, lon }) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        `${api.base}weather?lat=${lat}&lon=${lon}&APPID=${api.key}`
+      );
+      const data = await response.json();
+      if (data.cod != 200) {
+        navigate("/*", { replace: true });
+      }
+      setWeather(data);
+    } catch (error) {
+      console.error("ERROR:", error);
+      setErrorOccured(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  } else {
+    if (allowed) {
+      return <WeatherDetails weather={weather} lat={lat} lon={lon} />;
+    } else {
+      return <PermissionDenied />;
+    }
+  }
 }

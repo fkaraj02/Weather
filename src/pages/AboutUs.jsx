@@ -1,16 +1,42 @@
 export default function AboutUs() {
   return (
-    <div className="pt-16 pl-52 pr-52 pb-28">
+    <div className="pt-16 md:pl-52 md:pr-52 pb-28 px-16">
       <div className="grid grid-cols-1">
         <div className=" flex items-center justify-center ">
           <h1 className="text-5xl font-bold">About Us</h1>
         </div>
         <div className=" flex items-center justify-center mt-16 text-center ">
-          <iframe
-            src="http://localhost:5601/app/dashboards#/view/fefd949c-4c06-4b4d-9b31-046aacb40b5b?_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A60000)%2Ctime%3A(from%3Anow-15m%2Cto%3Anow))&hide-filter-bar=true"
-            height="800"
-            width="2000"
-          ></iframe>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+          exercitationem architecto adipisci! Corrupti aliquid magnam dolorem
+          sequi numquam eaque, illum ullam rerum enim ex doloremque dolore.
+          Perferendis iusto molestiae et. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Id qui nesciunt ex animi nostrum voluptatem aperiam
+          odit, facilis dolorem veritatis totam nihil dolor sit adipisci vitae
+          doloremque aliquam dolorum repudiandae. Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Repudiandae, sed deleniti repellat, ad
+          dignissimos saepe dicta commodi praesentium quaerat quisquam et
+          consequuntur soluta quod beatae. Expedita, deserunt veniam! Maiores,
+          voluptates.
+        </div>
+
+        <div className=" flex items-center justify-center mt-16 text-center text-xl font-bold">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+          exercitationem architecto adipisci! Corrupti aliquid magnam dolorem
+          sequi numquam eaque, illum ullam rerum enim ex doloremque dolore.
+          Perferendis iusto molestiae et.
+        </div>
+        <div className=" flex items-center justify-center mt-16 text-center ">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+          exercitationem architecto adipisci! Corrupti aliquid magnam dolorem
+          sequi numquam eaque, illum ullam rerum enim ex doloremque dolore.
+          Perferendis iusto molestiae et. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Id qui nesciunt ex animi nostrum voluptatem aperiam
+          odit, facilis dolorem veritatis totam nihil dolor sit adipisci vitae
+          doloremque aliquam dolorum repudiandae. Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Repudiandae, sed deleniti repellat, ad
+          dignissimos saepe dicta commodi praesentium quaerat quisquam et
+          consequuntur soluta quod beatae. Expedita, deserunt veniam! Maiores,
+          voluptates.
         </div>
       </div>
     </div>
