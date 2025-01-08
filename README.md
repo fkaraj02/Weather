@@ -19,9 +19,18 @@ A responsive weather application built using **React**, **Vite** and **Tailwind 
 
 ## Installation
 
-1. Clone the repository: ```git clone https://github.com/flamur002/Weather.git```
-2. Navigate to the diectory: ```cd Weather```
-3. Install dependencies: ```npm install```
+1. Clone the repository: 
+```
+git clone https://github.com/flamur002/Weather.git
+```
+2. Navigate to the diectory: 
+```
+cd Weather
+```
+3. Install dependencies: 
+```
+npm install
+```
 4. Create a `.env` file in the root directory for the API keys. The format **should** be as following:
 
 ```
@@ -34,4 +43,7 @@ VITE_OPEN_GEOLOCATION_KEY="&limit=10&appid=<your_api_key>"
 > [!WARNING]
 > Use this exact same format and replace <your_api_key> with your actual API key, otherwise you will get errors.
 
-5. Start the server: ```npm run dev```
+5. Start the server: 
+```
+npm run dev
+```
