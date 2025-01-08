@@ -1,4 +1,4 @@
-import WeatherDetails from "../components/Weatherdetails";
+import WeatherDetails from "../components/WeatherDetails";
 import React, { useState, useEffect } from "react";
 import Loading from "../components/Loading";
 import PermissionDenied from "./PermissionDenied";
