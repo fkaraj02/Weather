@@ -21,7 +21,7 @@ A responsive weather application built using **React**, **Vite** and **Tailwind 
 
 1. Clone the repository: 
 ```
-git clone https://github.com/flamur002/Weather.git
+git clone https://github.com/fkaraj02/Weather.git
 ```
 2. Navigate to the diectory: 
 ```
