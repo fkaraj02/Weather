@@ -1,8 +1,37 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather application built using **React**, **Vite** and **Tailwind CSS**, fetching real-time weather data from the **OpenWeatherMap** free API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-Time Weather Data**: Works for any location around the world.
+- **Current Location**: Asks for user permission to access the current location and display the corresponding data.
+- **Search Functionality**: Look up weather by place name (city, village, area etc.) or by coordinates (latitude and longitude).
+- **Add to Favourites**: Ability to save locations using the browser storage for quick access.
+- **Responsive Design**: Optimized for mobile devices, tablet and desktop.
+- **Error handling**
+
+## Requirements
+
+- Node.js
+- npm
+- [OpenWeatherMap Free API Key](https://openweathermap.org/)
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/flamur002/Weather.git`
+2. Navigate to the diectory: `cd Weather`
+3. Install dependencies: `npm install`
+4. Create a `.env` file in the root directory for the API keys. The format **should** be as following:
+
+```
+VITE_OPEN_WEATHER_API_KEY="<your_api_key>&units=metric"
+VITE_OPEN_WEATHER_API_URL="https://api.openweathermap.org/data/2.5/"
+VITE_OPEN_GEOLOCATION_URL="https://api.openweathermap.org/geo/1.0/direct?q="
+VITE_OPEN_GEOLOCATION_KEY="&limit=10&appid=<your_api_key>"
+```
+
+> [!WARNING]
+> Use this exact same format and replace <your_api_key> with your actual API key, otherwise you will get errors.
+
+5. Start the server: `npm run dev`
