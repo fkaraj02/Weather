@@ -1,7 +1,11 @@
 # Weather App
 
 A responsive weather application built using **React**, **Vite** and **Tailwind CSS**, fetching real-time weather data from the **OpenWeatherMap** free API.
+
+
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/main.png)
+
+
 ## Features
 
 - **Real-Time Weather Data**: Works for any location around the world.
@@ -50,8 +54,15 @@ npm run dev
 ## Screenshots
 
 1. Home/Weather Page
+
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image1.jpeg)
+
+
 2. Favourites Page
+
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image2.jpeg)
+
+
 3. Advanced Search Page
+
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image3.jpeg)
