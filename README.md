@@ -53,16 +53,16 @@ npm run dev
 ```
 ## Screenshots
 
-1. Home/Weather Page
+### 1. Home/Weather Page
 
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image1.jpeg)
 
 
-2. Favourites Page
+### 2. Favourites Page
 
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image2.jpeg)
 
 
-3. Advanced Search Page
+### 3. Advanced Search Page
 
 ![image_alt](https://github.com/fkaraj02/Weather/blob/58ad73e89ea0213223487df4789701caecd3925c/Image3.jpeg)
